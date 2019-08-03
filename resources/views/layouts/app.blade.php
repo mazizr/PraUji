@@ -33,7 +33,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @Auth
+                        @guest
+                        @else
+                        @role('admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Menu super admin</a>
                         </li>
@@ -46,7 +48,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Menu global role</a>
                         </li>
-                        @endauth
+                        @endrole
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
