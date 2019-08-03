@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix'=>'/','middleware'=>['auth'.'role:admin']],
+Route::group(['prefix'=>'/','middleware'=>['auth','role:admin']],
 function () {
     Route::get('/admin', function (){
         return view('admin.index');
